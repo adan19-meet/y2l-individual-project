@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style>
+	div.fixed {
+  		position: fixed;
+  		bottom:0;
+  		right: 0;
+  		top: 50px;
+  		width: 450px;
+}
+</style>
+<body>
+	<div>
+		<h2>PROJECTS:</h2>
+	</div>
+
+	<div class="fixed">
+		<form action="/projects" method="POST">
+			<h1>Share your own project:</h1>
+			enter your username:<input type="text" name="username" ><br>
+			describe your project:<input type="text" name="project" ><br>
+			date:<input type="date" name="date"><br>
+			time:<input type="time" name="time"><br>
+			where:<input type="text" name="place"><br>
+			<input type="submit" value="Submit">
+</form>
+	</div>
+	<div>
+		{% for i in all_my_projects%}
+    	<h1>{{i.username}}</h1>       
+    	<p> {{i.project}}</p>
+    	<p>{{i.date}}</p>
+    	<p>{{i.time}}</p>
+    	<p>{{i.place}}</p>
+    	<!-- <p>poster: <a href = "/profile/{{i.username}}">{{i.username}}</a></p> -->
+  		{% endfor %}
+	</div>
+
+
+
+</body>
+</html>

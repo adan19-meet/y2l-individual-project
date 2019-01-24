@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
 <style>
 * {box-sizing: border-box;}
 
@@ -59,15 +60,24 @@ body {
   }
 }
 </style>
-</head>
 <body>
+	<div class="topnav">
+  		<a class="active" href="/">Home</a>
+  		<a href="/login">Log in</a>
+  		<a href="/signup">Sign up</a>
+  		<input type="text" placeholder="Search..">
+	</div>
+	<form action="/login" placeholder="log in" method="POST">
+  		Username:<br>
+  		<input type="text" name="username" value="username">
+  		<br>
+  		Password:<br>
+  		<input type="text" name="password" value="password">
+  		<br>
+  		<input type="submit" value="Submit">
+	</form> 
 
-<div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#contact">Sign up</a>
-  <input type="text" placeholder="Search..">
-</div>
+
 
 </body>
 </html>

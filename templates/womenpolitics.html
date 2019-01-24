@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
 <style>
 * {box-sizing: border-box;}
 
@@ -59,15 +60,27 @@ body {
   }
 }
 </style>
-</head>
 <body>
-
-<div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#contact">Sign up</a>
-  <input type="text" placeholder="Search..">
+	<div class="topnav">
+  		<a class="active" href="/">Home</a>
+  		<a href="/stories">Share</a>
+  		<a href="/discussion">discussion</a>
+  		<a href="/projects">Projects</a>
+      <a href="/womenpolitics">women in politics</a>
 </div>
+<h1>Stories:</h1>
+<div>
+  {% for i in womenpoliticspost%}
+    <h1>{{i.username}}</h1>       
+    <p> {{i.story}}</p>
+  {% endfor %}
+  <form action="/womenpolitics" method="POST">
+    <input type="submit" value="LIKE">  
+  </form>
+  
+
+</div>
+
 
 </body>
 </html>

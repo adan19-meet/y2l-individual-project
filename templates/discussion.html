@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style>
+body {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.container {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+.time-left {
+  float: left;
+  color: #999;
+}
+</style>
+<body>
+	<h2>Chat Messages</h2>
+	{% for i in all_my_messages%}
+    	<div class="container">
+	
+  			<img src="data:image/png;base64,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" alt="Avatar" style="width:100%;"
+  >
+  	<p>{{i.user}}:{{i.message}}</p>
+
+
+
+  
+  <!--<span class="time-right">11:00</span>-->
+</div>
+    	<!-- <p>poster: <a href = "/profile/{{i.username}}">{{i.username}}</a></p> -->
+  	{% endfor %}
+<div> 
+	<form class="form" action="/discussion" method="POST">
+		<input type="text" name="message">
+		<input type="submit" name="send" value="send" >
+	</form>
+
+
+</div>
+
+</body>
+</html>
