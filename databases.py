@@ -52,3 +52,10 @@ def add_message(message, user):
 
 def query_all_message():
 	return session.query(Messages).all()
+def add_feedback(name,email,message):
+	feedback = Feedback(name=name,email=email,message=message)
+	session.add(feedback)
+	session.commit
+	print("feedback")
+def query_all_feedback(name,email,message):
+	return session.query(Feedback).all()

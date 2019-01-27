@@ -3,83 +3,229 @@
 <head>
 	<title></title>
 </head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-* {box-sizing: border-box;}
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+.title{
+  position: absolute;
+  left: 50%;
 }
 
-.topnav {
-  overflow: hidden;
-  background-color: #e9e9e9;
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 700px;
+  position: relative;
+  margin: auto;
 }
 
-.topnav a {
-  float: left;
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: #2196F3;
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
   color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
 }
 
-.topnav input[type=text] {
-  float: right;
-  padding: 6px;
-  margin-top: 8px;
-  margin-right: 16px;
-  border: none;
-  font-size: 17px;
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
 }
 
-@media screen and (max-width: 600px) {
-  .topnav a, .topnav input[type=text] {
-    float: none;
-    display: block;
-    text-align: left;
-    width: 100%;
-    margin: 0;
-    padding: 14px;
-  }
-  
-  .topnav input[type=text] {
-    border: 1px solid #ccc;  
-  }
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
 }
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/*.story{
+  margin: 57px;
+  border-left: solid 8px; black;
+  background-color: grey;
+  width: 450px;
+  height:350px;
+}
+.pp{
+  font-size: 14;
+
+}
+.ps{
+  max-height: 
+}
+*/
+
+
 </style>
-<body>
-	<div class="topnav">
-  		<a class="active" href="/">Home</a>
-  		<a href="/stories">Share</a>
-  		<a href="/discussion">discussion</a>
-  		<a href="/projects">Projects</a>
-      <a href="/womenpolitics">women in politics</a>
+<body class="body" >
+  <div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="#home" class="w3-bar-item w3-button" style="font-weight:bold;">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;"><i class="fa fa-user"></i> ABOUT</a>
+    <a href="#contact" style="font-weight:bold;"class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+    <a href="/signup" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;"><i class="fa fa-th"></i> SIGN UP</a>
+    <a href="/login" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;"> LOG IN</a>
+    <a href="/womenpolitics" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;">STORIES</a>
+    <a href="/stories" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;">SHARE</a>
+    <a href="/projects" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;">PROJECTS</a>
+    <a href="/discussion" class="w3-bar-item w3-button w3-hide-small"style="font-weight:bold;">DISCUSSION</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red" style="font-weight:bold;">
+    </a>
+  </div>
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
+    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+    <a href="#" class="w3-bar-item w3-button">SEARCH</a>
+  </div>
 </div>
-<h1>Stories:</h1>
-<div>
+<br>
+<br>
+	
+<h1 class="title"> READ STORIES</h1>
+<br><br><br><br>
+<!-- <div class="story">
   {% for i in womenpoliticspost%}
-    <h1>{{i.username}}</h1>       
-    <p> {{i.story}}</p>
+  <p class="pp"> {{i.username}} :</p>
+  <p class="ps"> story:{{i.story}}</p>
+  <!-<h1 class="h1">{{i.username}}</h1>       
+    <p class="ps"> {{i.story}}</p>
   {% endfor %}
-  <form action="/womenpolitics" method="POST">
-    <input type="submit" value="LIKE">  
-  </form>
-  
+</div>  -->
+<div class="slideshow-container">
+{% for i in womenpoliticspost%}
+<div class="mySlides fade">
+  <img src="/static/story1.jpg" style="width:100%">
+  <div class="centered">Centered
+    <p>{{i.username}}: {{i.story}}</p></div>
+</div>
+{% endfor%}
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
 
 </div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
 
 
 </body>

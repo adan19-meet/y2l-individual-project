@@ -8,7 +8,16 @@ current_username = None
 
 @app.route('/' ,  methods=['GET','POST'])
 def home():
-	return render_template("home.html")
+	if request.method == "POST":
+		name = request.form["name"]
+		email = request.form["email"]
+		message = request.form["message"]
+		databases.add_feedback(name=name,email=email,message=message)
+		return render_template("home.html")
+
+	
+	else:
+		return render_template("home.html")
 
 
 @app.route('/login' , methods = ['GET','POST'])
@@ -87,12 +96,12 @@ def projects():
 		all_my_projects = databases.query_all_projects()
 		return render_template("projects.html", all_my_projects=all_my_projects)
 @app.route('/profile/<string:username>')
-def profile(username):
-	user = databases.query_by_name(username)
-	if user is not None:
-		return render_template('profile.html', user = user)
-	else:
-		return redirect(url_for('login'))
+# def profile(username):
+# 	user = databases.query_by_name(username)
+# 	if user is not None:
+# 		return render_template('profile.html', user = user)
+# 	else:
+# 		return redirect(url_for('login'))
 @app.route('/stories' , methods=['GET','POST'])
 def stories():
 	print(request.method)

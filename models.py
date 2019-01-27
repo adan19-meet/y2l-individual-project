@@ -47,6 +47,17 @@ class Messages(Base):
 	def __repr__():
 		return("Messages message: {}".format(self.message))
 
+class Feedback(Base):
+	__tablename__ = "Feedback"
+	feedback_id = Column(Integer,primary_key=True)
+	name = Column(String)
+	email = Column(String)
+	message = Column(String)
+	def __repr__():
+		return("Feedback name: {}, Feedback email: {},Feedback message: {}".format(self.name , self.email , self.message))
+
+		
+
 		
 
 		

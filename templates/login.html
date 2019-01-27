@@ -3,71 +3,101 @@
 <head>
 	<title></title>
 </head>
-<style>
-* {box-sizing: border-box;}
-
-body {
-  margin: 0;
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style >
+body, html {
+  height: 100%;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.topnav {
-  overflow: hidden;
-  background-color: #e9e9e9;
+* {
+  box-sizing: border-box;
 }
 
-.topnav a {
-  float: left;
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+.bg-img {
+  /* The image used */
+  background-image: url("");
+
+  min-height: 380px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
+/* Add styles to the form container */
+.container {
+  position: absolute;
+  right: 50%;
+  margin: 85px;
+  max-width: 300px;
+  padding: 16px;
+  background-color: grey;
 }
 
-.topnav a.active {
-  background-color: #2196F3;
-  color: white;
-}
-
-.topnav input[type=text] {
-  float: right;
-  padding: 6px;
-  margin-top: 8px;
-  margin-right: 16px;
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
   border: none;
-  font-size: 17px;
+  background: #f1f1f1;
 }
 
-@media screen and (max-width: 600px) {
-  .topnav a, .topnav input[type=text] {
-    float: none;
-    display: block;
-    text-align: left;
-    width: 100%;
-    margin: 0;
-    padding: 14px;
-  }
-  
-  .topnav input[type=text] {
-    border: 1px solid #ccc;  
-  }
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
 }
+
+/* Set a style for the submit button */
+.btn {
+  background-color: black;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+  .w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
 </style>
-<body>
-	<div class="topnav">
-  		<a class="active" href="/">Home</a>
-  		<a href="/login">Log in</a>
-  		<a href="/signup">Sign up</a>
-  		<input type="text" placeholder="Search..">
-	</div>
-	<form action="/login" placeholder="log in" method="POST">
+
+<body background="/static/cc.jpg" style = "background-size: cover; ">
+  <body class="body">
+
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="/#home" class="w3-bar-item w3-button" style="font-weight:bold;">HOME</a>
+    <a href="/#about" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;"><i class="fa fa-user"></i> ABOUT</a>
+    <a href="/#contact" style="font-weight:bold;"class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+    <a href="/signup" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;"><i class="fa fa-th"></i> SIGN UP</a>
+    <a href="/login" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;"> LOG IN</a>
+    <a href="/womenpolitics" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;">STORIES</a>
+    <a href="/stories" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;">SHARE</a>
+    <a href="/projects" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;">PROJECTS</a>
+    <a href="/discussion" class="w3-bar-item w3-button w3-hide-small"style="font-weight:bold;">DISCUSSION</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red" style="font-weight:bold;">
+    </a>
+  </div>
+	
+	<!-- <form action="/login" placeholder="log in" method="POST">
   		Username:<br>
   		<input type="text" name="username" value="username">
   		<br>
@@ -75,7 +105,20 @@ body {
   		<input type="text" name="password" value="password">
   		<br>
   		<input type="submit" value="Submit">
-	</form> 
+	</form>  -->
+  <div class="bg-img">
+  <form action="/login" class="container" method="POST">
+    <h1>Login</h1>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Username" name="username" >
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" >
+
+    <button type="submit" class="btn">LOGIN</button>
+  </form>
+</div>
 
 
 
