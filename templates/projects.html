@@ -11,10 +11,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 html{
-	height: 100%;
+	/*height: 100%;*/
 	margin: auto;
 	width: 100%;
-	overflow: scroll;
 	
 }
 .solid {border-style: solid;
@@ -33,7 +32,7 @@ html{
   		width: 450px;
 }*/
 body, html {
-  height: 100%;
+/*  height: 5500px;*/
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -58,12 +57,13 @@ body, html {
 
 /* Add styles to the form container */
 .container {
-  position: fixed;
-  right: 5%;
-  height: 500px;
+  position: relative;
+ /* right: 5%;*/
+/*  height: 500px;*/
   width: 400px;
   padding: 16px;
-  overflow: scroll;
+  margin-right: 5%;
+/*  overflow: scroll;*/
   background-color: grey;
   float: right;
 
@@ -129,8 +129,8 @@ input[type=text]:focus, input[type=password]:focus {
 
 
 </style>
-<body background="/static/share4.jpeg"style="overflow: scroll; background-size: cover; position: relative;" >
-	<div class="w3-top">
+<body background="/static/share4.jpeg"style=" background-size: cover; position: relative;" >
+	<!-- <div class="w3-top"> -->
   <div class="w3-bar" id="myNavbar">
     <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
       <i class="fa fa-bars"></i>
@@ -147,6 +147,8 @@ input[type=text]:focus, input[type=password]:focus {
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red" style="font-weight:bold;">
     </a>
   </div>
+
+
 	<div>
 		<h2>PROJECTS:</h2>
 	</div>
@@ -165,7 +167,7 @@ input[type=text]:focus, input[type=password]:focus {
 	
 
 	
-			<div class="bg-img">
+<!-- <div class="bg-img"> -->
   <form action="/projects" class="container" method="POST">
     <h1>Share your own project</h1>
 
@@ -186,7 +188,7 @@ input[type=text]:focus, input[type=password]:focus {
 
     <button type="submit" class="btn">SHARE</button>
   </form>
-</div>
+<!-- </div> -->
 
 
 <!-- {% for i in all_my_projects %}
