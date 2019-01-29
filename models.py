@@ -32,7 +32,7 @@ class Project(Base):
 	__tablename__ = "Projects"
 	project_id = Column(Integer,primary_key=True)
 	username = Column(String)
-	Project = Column(String)
+	project = Column(String)
 	date= Column(String)
 	time = Column(String)
 	place = Column(String)

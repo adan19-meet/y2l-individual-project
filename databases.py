@@ -37,7 +37,7 @@ def query_all_posts():
 
 def add_project(username,project,date,time,place):
 	print("added a project")
-	project = Project(username=username,Project=project,date=date,time=time,place=place)
+	project = Project(username=username,project=project,date=date,time=time,place=place)
 	session.add(project)
 	session.commit()
 

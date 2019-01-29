@@ -3,7 +3,21 @@
 <head>
 	<title></title>
 </head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+.solid {border-style: solid;
+		margin: 200px;
+		width: 40%;
+		height: 60%;
+		overflow: scroll;
+		background-color: grey;
+		}
+
 	div.fixed {
   		position: fixed;
   		bottom:0;
@@ -11,33 +25,140 @@
   		top: 50px;
   		width: 450px;
 }
+body, html {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  /* The image used */
+
+  height: 500px;
+  left: 47%;
+  overflow: scroll;
+
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Add styles to the form container */
+.container {
+  position: fixed;
+  right: 5%;
+  height: 100%;
+  width: 400px;
+  padding: 16px;
+  overflow: scroll;
+  background-color: grey;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: black;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+.project{
+	position: fixed;
+	border-style: solid;
+	background-color: grey;
+	width: 300px;
+	height: 400px
+	overflow:scroll;
+}
+
+
+
 </style>
-<body>
+<body >
+	<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="/#home" class="w3-bar-item w3-button" style="font-weight:bold;">HOME</a>
+    <a href="/#about" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;"><i class="fa fa-user"></i> ABOUT</a>
+    <a href="/#contact" style="font-weight:bold;"class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+    <a href="/signup" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;"><i class="fa fa-th"></i> SIGN UP</a>
+    <a href="/login" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;"> LOG IN</a>
+    <a href="/womenpolitics" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;">STORIES</a>
+    <a href="/stories" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;">SHARE</a>
+    <a href="/projects" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;">PROJECTS</a>
+    <a href="/discussion" class="w3-bar-item w3-button w3-hide-small"style="font-weight:bold;">DISCUSSION</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red" style="font-weight:bold;">
+    </a>
+  </div>
 	<div>
 		<h2>PROJECTS:</h2>
 	</div>
 
-	<div class="fixed">
-		<form action="/projects" method="POST">
-			<h1>Share your own project:</h1>
-			enter your username:<input type="text" name="username" ><br>
-			describe your project:<input type="text" name="project" ><br>
-			date:<input type="date" name="date"><br>
-			time:<input type="time" name="time"><br>
-			where:<input type="text" name="place"><br>
-			<input type="submit" value="Submit">
-</form>
+	
+	
+			<div class="bg-img">
+  <form action="/projects" class="container" method="POST">
+    <h1>Share your own project</h1>
+
+    <label for="email"><b>Project name</b></label>
+    <input type="text" placeholder="Enter your project name" name="username" >
+
+    <label for="psw"><b>Discription</b></label>
+    <input type="text" placeholder="Describe your project" name="project" >
+
+    <label for="date"><b>Date</b></label><br>
+    <input type="date" placeholder="Date" name="date"><br>
+
+    <label for="time"><b>Time</b></label><br>
+    <input type="time"  placeholder="Time" name="time"><br>
+
+    <label for="place"><b>Place</b></label>
+    <input type="text" name="place" placeholder="where?">
+
+    <button type="submit" class="btn">SHARE</button>
+  </form>
+</div>
+{% for i in all_my_projects %}
+	<div class="project">
+		<p>{{i.username}}</p>
+		<p>{{i.project}}</p>
+		<p>{{i.date}}</p>
+		<p>{{i.time}}</p>
+		<p>{{i.place}}</p>
 	</div>
-	<div>
-		{% for i in all_my_projects%}
-    	<h1>{{i.username}}</h1>       
-    	<p> {{i.project}}</p>
-    	<p>{{i.date}}</p>
-    	<p>{{i.time}}</p>
-    	<p>{{i.place}}</p>
-    	<!-- <p>poster: <a href = "/profile/{{i.username}}">{{i.username}}</a></p> -->
-  		{% endfor %}
-	</div>
+{% endfor %}
+
+
+
+
 
 
 

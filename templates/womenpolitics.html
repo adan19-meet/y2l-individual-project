@@ -13,7 +13,9 @@
 <style>
 .title{
   position: absolute;
-  left: 50%;
+  top: 5%;
+  left:42%;
+  font-size: 36px;
 }
 
 .w3-wide {letter-spacing: 10px;}
@@ -25,7 +27,7 @@ img {vertical-align: middle;}
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 700px;
+  max-width: 900px;
   position: relative;
   margin: auto;
 }
@@ -117,9 +119,12 @@ img {vertical-align: middle;}
 }
 .centered {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 20%;
+  left: 15%;
+  width: 30%;
+  right: 60%;
+  height: 64%;
+  overflow: scroll;
 }
 /*.story{
   margin: 57px;
@@ -167,9 +172,7 @@ img {vertical-align: middle;}
 </div>
 <br>
 <br>
-	
-<h1 class="title"> READ STORIES</h1>
-<br><br><br><br>
+	<h1 class="title"> READ STORIES</h1>
 <!-- <div class="story">
   {% for i in womenpoliticspost%}
   <p class="pp"> {{i.username}} :</p>
@@ -181,9 +184,10 @@ img {vertical-align: middle;}
 <div class="slideshow-container">
 {% for i in womenpoliticspost%}
 <div class="mySlides fade">
-  <img src="/static/story1.jpg" style="width:100%">
-  <div class="centered">Centered
-    <p>{{i.username}}: {{i.story}}</p></div>
+  <img src="/static/index3.jpeg" style="width:100%">
+  <div class="centered">
+    <p>{{i.username}}: 
+    {{i.story}}</p></div>
 </div>
 {% endfor%}
 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>

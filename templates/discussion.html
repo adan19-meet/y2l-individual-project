@@ -12,7 +12,7 @@
 <style>
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
-body {
+.body {
   margin: 0 auto;
   max-width: 800px;
   padding: 0 20px;
@@ -63,8 +63,26 @@ body {
 </style>
 <body background="/static/pf.jpg" style="background-size: cover;">
 
+  <div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="#home" class="w3-bar-item w3-button" style="font-weight:bold;">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;"><i class="fa fa-user"></i> ABOUT</a>
+    <a href="#contact" style="font-weight:bold;"class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+    <a href="/signup" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;"><i class="fa fa-th"></i> SIGN UP</a>
+    <a href="/login" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;"> LOG IN</a>
+    <a href="/womenpolitics" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;">STORIES</a>
+    <a href="/stories" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;">SHARE</a>
+    <a href="/projects" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;">PROJECTS</a>
+    <a href="/discussion" class="w3-bar-item w3-button w3-hide-small"style="font-weight:bold;">DISCUSSION</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red" style="font-weight:bold;">
+    </a>
+  </div>
 
-  <br><br><br><br>
+<div class="body">
+  <br>
 	<h2>Chat Messages</h2>
 	{% for i in all_my_messages%}
     	<div class="container">
@@ -88,6 +106,6 @@ body {
 
 
 </div>
-
+</div>
 </body>
 </html>

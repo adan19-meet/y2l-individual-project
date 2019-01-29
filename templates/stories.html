@@ -16,15 +16,15 @@ input[type=text], select {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid #172121;
   border-radius: 4px;
   box-sizing: border-box;
 }
 
 input[type=submit] {
   width: 100%;
-  background-color: #4CAF50;
-  color: white;
+  background-color: #3f4045;
+  color: black;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
@@ -33,13 +33,16 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: #45a049;
+  background-color: #172121;
 }
 
-div {
+.form {
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color:white;
   padding: 20px;
+  width: 50%;
+  position: absolute;
+  left: 25%;
 }
 * {box-sizing: border-box;}
 
@@ -51,15 +54,15 @@ body {
 .w3-hover-opacity {cursor: pointer;}
 
 </style>
-<body>
+<body background="/static/share4.jpeg" style="background-size: cover;">
   <div class="w3-top">
   <div class="w3-bar" id="myNavbar">
     <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
       <i class="fa fa-bars"></i>
     </a>
     <a href="/#home" class="w3-bar-item w3-button" style="font-weight:bold;">HOME</a>
-    <a href="/home#about" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;"><i class="fa fa-user"></i> ABOUT</a>
-    <a href="/home#contact" style="font-weight:bold;"class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+    <a href="/#about" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;"><i class="fa fa-user"></i> ABOUT</a>
+    <a href="/#contact" style="font-weight:bold;"class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
     <a href="/signup" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;"><i class="fa fa-th"></i> SIGN UP</a>
     <a href="/login" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;"> LOG IN</a>
     <a href="/womenpolitics" class="w3-bar-item w3-button w3-hide-small" style="font-weight:bold;">STORIES</a>
@@ -71,21 +74,21 @@ body {
   </div>
   <!-- Navbar on small screens -->
 </div>
-	<div>
-    <br><br><br><br><br>
+<br><br><br><br><br><br>
+	<div class="form">
   <form action="/stories" method="post">
-    <label for="fname">What's on your mind?!</label>
+    <label for="fname" style="font-size: 36px;">What's on your mind?!</label>
     <input type="text" id="fname" name="story">
 
-    <label for="lname">username:</label>
+    <label for="lname" style="font-size: 36px;">username:</label>
     <input type="text" id="lname" name="username" >
 
-    <label for="country">TOPICS:</label>
+    <label for="country" style="font-size: 36px;">TOPICS:</label>
     <select id="country" name="topics">
       <option value="womenpolitics">women in politics</option>
     </select>
   
-    <input type="submit" value="Submit">
+    <input type="submit" value="SHARE">
   </form>
 </div>
 
