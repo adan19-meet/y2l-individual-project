@@ -10,6 +10,12 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+html{
+	height: 100%;
+	margin: auto;
+	width: 100%;
+	
+}
 .solid {border-style: solid;
 		margin: 200px;
 		width: 40%;
@@ -18,13 +24,13 @@
 		background-color: grey;
 		}
 
-	div.fixed {
+/*	div.fixed {
   		position: fixed;
   		bottom:0;
   		right: 0;
   		top: 50px;
   		width: 450px;
-}
+}*/
 body, html {
   height: 100%;
   font-family: Arial, Helvetica, sans-serif;
@@ -53,11 +59,13 @@ body, html {
 .container {
   position: fixed;
   right: 5%;
-  height: 100%;
+  height: 500px;
   width: 400px;
   padding: 16px;
   overflow: scroll;
   background-color: grey;
+  float: right;
+
 }
 
 /* Full-width input fields */
@@ -89,18 +97,38 @@ input[type=text]:focus, input[type=password]:focus {
   opacity: 1;
 }
 .project{
-	position: fixed;
-	border-style: solid;
-	background-color: grey;
-	width: 300px;
-	height: 400px
-	overflow:scroll;
-}
+	position: relative;
+	border-style: solid black;
+	background-color: white;
+	width: 550px;
+	height: 450px;
+	left: 20%;
+	overflow:scroll;}
+	.gl{
+		float: left;
+	}
+	.project_name{
+		font-size: 30px;
+		position: relative;
+		left: 40%
+
+	}
+	.project_description{
+		font-family: "Times New Roman", Times, serif;
+		font-size: 24px;
+		position: relative;
+		left: 5%;
+		
+	}
+	.date{
+		font-size: 20px;
+		
+	}
 
 
 
 </style>
-<body >
+<body background="/static/share4.jpeg"style="overflow: scroll; background-size: cover; position: relative;" >
 	<div class="w3-top">
   <div class="w3-bar" id="myNavbar">
     <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
@@ -121,8 +149,20 @@ input[type=text]:focus, input[type=password]:focus {
 	<div>
 		<h2>PROJECTS:</h2>
 	</div>
-
+	<div class="gl">
+		{% for i in all_my_projects %}
+	<div class="project">
+		<p class="project_name">{{i.username}}</p>
+		<p class="project_description">{{i.project}}</p>
+		<p class="date"><img width="45" height="45" src="/static/date.jpg"> DATE:{{i.date}}</p>
+		<p class="time"><img width="45" height="45" src="/static/time.jpg"> TIME:{{i.time}}</p>
+		<p class="place"><img width="45" height="45" src="/static/place.jpg"> PLACE:{{i.place}}</p>
+	</div>
+	<br>
+{% endfor %}
+	</div>
 	
+
 	
 			<div class="bg-img">
   <form action="/projects" class="container" method="POST">
@@ -146,7 +186,9 @@ input[type=text]:focus, input[type=password]:focus {
     <button type="submit" class="btn">SHARE</button>
   </form>
 </div>
-{% for i in all_my_projects %}
+
+
+<!-- {% for i in all_my_projects %}
 	<div class="project">
 		<p>{{i.username}}</p>
 		<p>{{i.project}}</p>
@@ -154,7 +196,7 @@ input[type=text]:focus, input[type=password]:focus {
 		<p>{{i.time}}</p>
 		<p>{{i.place}}</p>
 	</div>
-{% endfor %}
+{% endfor %} -->
 
 
 
